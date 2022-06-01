@@ -5,6 +5,7 @@ go 1.18
 require (
 	github.com/gin-gonic/gin v1.7.7
 	github.com/google/go-github/v43 v43.0.0
+	github.com/pfnet-research/alertmanager-to-github v0.0.0-00010101000000-000000000000
 	github.com/prometheus/client_golang v1.12.2
 	github.com/rs/zerolog v1.26.1
 	github.com/stretchr/testify v1.7.1
@@ -44,4 +45,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
 )
 
-replace github.com/pfnet-research/alertmanager-to-github => github.com/signal-ai/alertmanager-to-github master
+replace github.com/pfnet-research/alertmanager-to-github => github.com/signal-ai/alertmanager-to-github v0.0.3-0.20220601132249-c023e6c669aa
