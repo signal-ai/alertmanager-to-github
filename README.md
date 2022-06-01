@@ -15,13 +15,13 @@ It does:
 
 ### Docker image
 
-```
+```shell
 docker pull ghcr.io/pfnet-research/alertmanager-to-github:v0.0.2
 ```
 
 ### go get
 
-```
+```shell
 go get github.com/pfnet-research/alertmanager-to-github
 ```
 
@@ -29,7 +29,7 @@ go get github.com/pfnet-research/alertmanager-to-github
 
 Start webhook server:
 
-```
+```shell
 $ read ATG_GITHUB_TOKEN
 (Personal Access Token)
 $ export ATG_GITHUB_TOKEN
@@ -54,7 +54,7 @@ receivers:
 
 ## Configuration
 
-```
+```shell
 $ alertmanager-to-github start -h
 NAME:
    alertmanager-to-github start - Start webhook HTTP server
@@ -70,6 +70,7 @@ OPTIONS:
    --title-template-file value  Title template file [$ATG_TITLE_TEMPLATE_FILE]
    --alert-id-template value    Alert ID template (default: "{{.Payload.GroupKey}}") [$ATG_ALERT_ID_TEMPLATE]
    --github-token value         GitHub API token (command line argument is not recommended) [$ATG_GITHUB_TOKEN]
+   --auto-close-resolved-issues Close resolved issues automatically (default: true) [$ATG_AUTO_CLOSE_RESOLVED_ISSUES]
    --help, -h                   show help (default: false)
 ```
 
@@ -87,26 +88,6 @@ Issue title and body are rendered from [Go template](https://golang.org/pkg/text
   - `urlQueryEscape`: Escape a string as a URL query
   - `json`: Marshal an object to JSON string
   - `timeNow`: Get current time
-
-## Customize organisation and repository
-
-The organisation/repository where issues are raised can be customised per-alert by specifying the `owner` and/or `repo` labels on the alert.
-
-e.g.
-
-```yaml
-- alert: HighRequestLatency
-  expr: job:request_latency_seconds:mean5m{job="myjob"} > 0.5
-  for: 10m
-  labels:
-    severity: page
-    org: my-alternative-org
-    repo: specific-service-repository
-  annotations:
-    summary: High request latency
-```
-
-This mechanism has precedence over the receiver URL query parameters.
 
 ## Deployment
 
