@@ -1,4 +1,4 @@
-module github.com/pfnet-research/alertmanager-to-github
+module github.com/signal-ai/alertmanager-to-github
 
 go 1.18
 
