@@ -187,9 +187,9 @@ func (n *GitHubNotifier) Notify(ctx context.Context, payload *types.WebhookPaylo
 	}
 
 	currentState := issue.GetState()
-	autoCloseIssue := desiredState == "closed" && n.AutoCloseResolvedIssues
+	canUpdateState := desiredState != "closed" || n.AutoCloseResolvedIssues
 
-	if desiredState != currentState && autoCloseIssue {
+	if desiredState != currentState && canUpdateState {
 		req = &github.IssueRequest{
 			State: github.String(desiredState),
 		}
