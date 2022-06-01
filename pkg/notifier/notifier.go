@@ -2,8 +2,9 @@ package notifier
 
 import (
 	"context"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/types"
 	"net/url"
+
+	"github.com/signal-ai/alertmanager-to-github/pkg/types"
 )
 
 type Notifier interface {

@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/rs/zerolog/log"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/cli"
 	"os"
+
+	"github.com/rs/zerolog/log"
+	"github.com/signal-ai/alertmanager-to-github/pkg/cli"
 )
 
 func main() {

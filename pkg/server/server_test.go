@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pfnet-research/alertmanager-to-github/pkg/types"
+	"github.com/signal-ai/alertmanager-to-github/pkg/types"
 	"github.com/stretchr/testify/assert"
 )
 

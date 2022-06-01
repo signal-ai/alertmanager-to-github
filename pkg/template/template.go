@@ -3,10 +3,11 @@ package template
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/types"
 	"net/url"
 	"text/template"
 	"time"
+
+	"github.com/signal-ai/alertmanager-to-github/pkg/types"
 )
 
 type Vars struct {

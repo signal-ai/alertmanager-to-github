@@ -9,11 +9,11 @@ import (
 	"strings"
 
 	"github.com/google/go-github/v43/github"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/template"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/types"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/rs/zerolog/log"
+	"github.com/signal-ai/alertmanager-to-github/pkg/template"
+	"github.com/signal-ai/alertmanager-to-github/pkg/types"
 )
 
 var (

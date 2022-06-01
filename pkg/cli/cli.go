@@ -11,10 +11,10 @@ import (
 	"strings"
 
 	"github.com/google/go-github/v43/github"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/notifier"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/server"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/template"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/types"
+	"github.com/signal-ai/alertmanager-to-github/pkg/notifier"
+	"github.com/signal-ai/alertmanager-to-github/pkg/server"
+	"github.com/signal-ai/alertmanager-to-github/pkg/template"
+	"github.com/signal-ai/alertmanager-to-github/pkg/types"
 	"github.com/urfave/cli/v2"
 	"golang.org/x/oauth2"
 )

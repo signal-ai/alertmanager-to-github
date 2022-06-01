@@ -5,10 +5,10 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/notifier"
-	"github.com/pfnet-research/alertmanager-to-github/pkg/types"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/rs/zerolog/log"
+	"github.com/signal-ai/alertmanager-to-github/pkg/notifier"
+	"github.com/signal-ai/alertmanager-to-github/pkg/types"
 )
 
 type Server struct {
