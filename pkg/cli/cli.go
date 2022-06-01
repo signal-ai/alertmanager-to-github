@@ -10,7 +10,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/google/go-github/v43/github"
+	"github.com/google/go-github/v45/github"
 	"github.com/signal-ai/alertmanager-to-github/pkg/notifier"
 	"github.com/signal-ai/alertmanager-to-github/pkg/server"
 	"github.com/signal-ai/alertmanager-to-github/pkg/template"
