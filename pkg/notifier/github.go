@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/url"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/google/go-github/v43/github"
@@ -268,5 +269,5 @@ func updateGithubApiMetrics(apiName string, resp *github.Response, err error) {
 	rateLimit.WithLabelValues(apiName).Set(float64(resp.Rate.Limit))
 	rateRemaining.WithLabelValues(apiName).Set(float64(resp.Rate.Remaining))
 	rateResetTime.WithLabelValues(apiName).Set(float64(resp.Rate.Reset.UTC().Unix()))
-	operationCount.WithLabelValues(apiName, resp.Status).Inc()
+	operationCount.WithLabelValues(apiName, strconv.Itoa(resp.StatusCode)).Inc()
 }
