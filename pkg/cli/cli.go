@@ -1,16 +1,15 @@
 package cli
 
 import (
+	"context"
 	"embed"
 	"encoding/json"
 	"fmt"
 	"io"
 	"io/ioutil"
-	"net/http"
 	"os"
 	"strings"
 
-	"github.com/gmlewis/go-httpdebug/httpdebug"
 	"github.com/google/go-github/v45/github"
 	"github.com/signal-ai/alertmanager-to-github/pkg/notifier"
 	"github.com/signal-ai/alertmanager-to-github/pkg/server"
@@ -187,15 +186,16 @@ func buildGitHubClient(githubURL string, token string) (*github.Client, error) {
 	var err error
 	var client *github.Client
 
+	ctx := context.TODO()
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: token},
 	)
-	tc := &oauth2.Transport{Source: ts, Base: httpdebug.New()}
+	tc := oauth2.NewClient(ctx, ts)
 
 	if githubURL == "" {
-		client = github.NewClient(&http.Client{Transport: tc})
+		client = github.NewClient(tc)
 	} else {
-		client, err = github.NewEnterpriseClient(githubURL, githubURL, &http.Client{Transport: tc})
+		client, err = github.NewEnterpriseClient(githubURL, githubURL, tc)
 		if err != nil {
 			return nil, err
 		}

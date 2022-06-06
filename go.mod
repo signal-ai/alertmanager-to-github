@@ -4,7 +4,6 @@ go 1.18
 
 require (
 	github.com/gin-gonic/gin v1.8.0
-	github.com/gmlewis/go-httpdebug v0.0.7
 	github.com/google/go-github/v45 v45.0.0
 	github.com/prometheus/client_golang v1.12.2
 	github.com/rs/zerolog v1.26.1
